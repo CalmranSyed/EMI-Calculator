@@ -1,0 +1,4 @@
+EMI Amount = [P x R x (1+R)^N]/[((1+R)^N)-1] 
+P -> Principal Amount
+R -> Rate of interest
+N -> Number of years (multiplied by months)

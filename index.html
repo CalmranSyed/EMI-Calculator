@@ -34,7 +34,7 @@
               />
               <input
                 type="range"
-                class="form-range loan-range"
+                class="form-range loan-range loan-amount-range"
                 name=""
                 id="loan-amount-range"
                 step="1000"
@@ -58,11 +58,9 @@
                 id="loan-duration-input"
                 class="form-control loan-field"
               />
-              <input type="radio" name="loan-duration-unit" id="" />
-              <input type="radio" name="loan-duration-unit" id="" />
               <input
                 type="range"
-                class="form-range loan-range"
+                class="form-range loan-range loan-duration-range"
                 name=""
                 id="loan-duration-range"
                 step="1"
@@ -88,7 +86,7 @@
               />
               <input
                 type="range"
-                class="form-range loan-range"
+                class="form-range loan-range loan-interest-range"
                 name=""
                 id="loan-interest-range"
                 step="0.01"
@@ -114,9 +112,7 @@
             </div>
 
             <div class="emi-chart-container card">
-              <div style="width: 800px">
-                <canvas id="emi-chart"></canvas>
-              </div>
+              <canvas id="myChart"></canvas>
             </div>
           </div>
         </div>
@@ -124,6 +120,8 @@
     </section>
 
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <script type="module" src="./js/render.js"></script>
   </body>
 </html>
