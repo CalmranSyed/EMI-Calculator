@@ -8,6 +8,7 @@
       href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./css/styles.css" />
 
     <title>EMI Calculator</title>
   </head>
@@ -30,7 +31,7 @@
                 type="number"
                 name=""
                 id="loan-amount-input"
-                class="form-control loan-field"
+                class="loan-amount-input form-control loan-field"
               />
               <input
                 type="range"
@@ -56,7 +57,7 @@
                 type="number"
                 name=""
                 id="loan-duration-input"
-                class="form-control loan-field"
+                class="loan-amount-input form-control loan-field"
               />
               <input
                 type="range"
@@ -82,7 +83,7 @@
                 type="number"
                 name=""
                 id="loan-interest-input"
-                class="form-control loan-field"
+                class="loan-amount-input form-control loan-field"
               />
               <input
                 type="range"
@@ -105,14 +106,27 @@
 
           <div class="calc-output flex flex-col align-items-center w-50">
             <div
-              class="monthly-emi w-50 mx-auto bg-success text-white text-center d-flex flex-column align-items-center justify-content-center py-3"
+              class="monthly-emi w-50 mx-auto bg-success text-white text-center d-flex flex-column align-items-center justify-content-center py-3 rounded-5"
             >
               <p>Monthly EMI</p>
-              <h4 id="monthly-emi-amount"></h4>
+              <h4 id="monthly-emi-amount">₹0*</h4>
             </div>
 
-            <div class="emi-chart-container card">
-              <canvas id="myChart"></canvas>
+            <div
+              class="emi-chart-container mt-5 card border-0 flex-row rounded-5"
+            >
+              <div id="chart-container" class="w-50"></div>
+              <div class="w-50 chart-stats">
+                <div class="total-amount-payable">
+                  <p class="mb-2"><span></span>Total Amount Payable</p>
+                  <h4 id="total-amount-payable" class="fw-bold"></h4>
+                </div>
+
+                <div class="total-interest-payable">
+                  <p class="mb-2"><span></span>Total Interest Payable</p>
+                  <h4 id="total-interest-payable" class="fw-bold"></h4>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -120,8 +134,11 @@
     </section>
 
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/variable-pie.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
     <script type="module" src="./js/render.js"></script>
   </body>
 </html>
